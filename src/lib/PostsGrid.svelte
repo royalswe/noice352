@@ -1,3 +1,4 @@
+<!-- Denna komponent används ej -->
 <script>
   import PostCard from '$lib/PostCard.svelte'
 

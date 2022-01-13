@@ -4,14 +4,17 @@
   export let post
 </script>
 
-<article>
-  <h2>
-    <a rel="prefetch" href="/blog/{post.slug.current}">{post.title}</a>
-  </h2>
+<article class="mb-12">
+
   {#if post.image}
-    <div class="image">
-      <SanityImage image={post.image} maxWidth={300} />
+  <div class="flex flex-col md:flex-row w-full lg:w-10/12">
+    <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12 ">
+      <SanityImage image={post.image} maxWidth={1000} />
     </div>
+    <h2 class="flex-1">
+      <a rel="prefetch" href="/blog/{post.slug.current}">{post.title}</a>
+    </h2>
+  </div>
   {/if}
 </article>
 

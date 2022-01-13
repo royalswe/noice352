@@ -1,5 +1,6 @@
 <script>
   import {urlFor} from './sanityClient'
+  import { fade } from 'svelte/transition';
 
   export let image
   export let maxWidth = 1200
@@ -20,11 +21,10 @@
 </script>
 
 {#if image}
-  <img
+  <img in:fade
     loading="lazy"
     src={urlFor(image).width(maxWidth).fit('fillmax')}
     alt={alt || image.alt || ''}
-    style="aspect-ratio: {aspectRatio}; opacity: {loaded ? 1 : 0}; transition: .2s opacity;"
-    on:load={() => (loaded = true)}
+    style="aspect-ratio: {aspectRatio};"
   />
 {/if}

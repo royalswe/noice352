@@ -1,11 +1,12 @@
 <script>
   import Header from '$lib/Header.svelte'
   import Footer from '$lib/Footer.svelte'
+  import '../app.postcss';
 </script>
 
-<Header blogTitle={'SvelteKit x Sanity Blog'} />
+<Header />
 
-<main style="padding: 1em">
+<main class="bg-gray-100 font-sans leading-normal tracking-normal">
   <slot />
 </main>
 
