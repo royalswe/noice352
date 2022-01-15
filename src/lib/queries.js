@@ -10,9 +10,11 @@ export function getPostsQuery(extraFilter) {
     ${extraFilter ? `&& ${extraFilter}` : ''}
   ] | order(publishedAt desc) {
     title,
+    preamble,
     slug,
     image,
     publishedAt,
+    "categories": *[ _type == "category" ]{ title }
   }`
 }
 
@@ -24,4 +26,5 @@ export const AUTHOR_CARD_FRAGMENT = `
 name,
 slug,
 image,
+bio,
 `

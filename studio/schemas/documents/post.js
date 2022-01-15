@@ -59,6 +59,12 @@ export default {
       ]
     },
     {
+      name: 'preamble',
+      type: 'string',
+      title: 'Preamble',
+      description: 'Short text that describes the content'
+    },
+    {
       name: 'body',
       type: 'bodyPortableText',
       type: 'array',
