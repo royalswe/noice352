@@ -1,6 +1,6 @@
 <script>
   import {urlFor} from './sanityClient'
-  import { fade } from 'svelte/transition';
+  import {fade} from 'svelte/transition'
 
   export let image
   export let maxWidth = 1200
@@ -15,13 +15,11 @@
   $: [width, height] = dimensions.split('x').map(Number)
 
   $: aspectRatio = width / height
-
-  // Once loaded, the image will transition to full opacity
-  let loaded = false
 </script>
 
 {#if image}
-  <img in:fade
+  <img
+    in:fade
     loading="lazy"
     src={urlFor(image).width(maxWidth).fit('fillmax')}
     alt={alt || image.alt || ''}

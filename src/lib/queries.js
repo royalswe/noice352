@@ -14,7 +14,8 @@ export function getPostsQuery(extraFilter) {
     slug,
     image,
     publishedAt,
-    "categories": *[ _type == "category" ]{ title }
+    "categories": *[ _type == "category" ]{ title },
+    "author": *[ _type == "author" ]{ ${AUTHOR_CARD_FRAGMENT} }
   }`
 }
 

@@ -2,14 +2,14 @@
   import SanityImage from './SanityImage.svelte'
 
   export let author
+  export let size = '40px'
 </script>
 
 {#if author?.name}
   <a href="/authors/{author.slug.current}">
-    <span class="mr-4">
+    <span class="mr-4" style="--theme-size: {size}">
       <SanityImage image={author.image} maxWidth={40} />
     </span>
-    <p class="font-bold text-base md:text-xl leading-none mb-2">{author.name}</p>
   </a>
 {/if}
 
@@ -22,8 +22,8 @@
   }
   span :global(img) {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: var(--theme-size);
+    height: var(--theme-size);
     object-fit: cover;
     margin: 0;
   }
