@@ -42,7 +42,7 @@
           <li class="mr-3">
             <a
               data-selected={path === '/about'}
-              href="/about"
+              href="#"
               class="inline-block py-2 px-4 text-gray-900 font-bold no-underline">Om mig</a
             >
           </li>

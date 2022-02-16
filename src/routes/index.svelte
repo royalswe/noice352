@@ -70,7 +70,7 @@ of Simple CSS Waves-->
 
 <div class="container mx-auto px-6 md:px-4">
   <main class="py-6">
-    {#each posts as post (post.slug.current)}
+    {#each posts as post (post.slug)}
       <PostCard {post} />
     {/each}
   </main>
@@ -81,7 +81,7 @@ of Simple CSS Waves-->
     font-family: 'Wendy One', sans-serif;
     font-size: 12vw;
     color: #fecc00;
-    text-shadow: 0 10px 7px rgba(0, 0, 0, 0.4), 0 -10px 1px #fff;
+    text-shadow: 0 10px 7px rgba(0, 0, 0, 0.4), 0 -0.06em 1px #fff;
     letter-spacing: -3px;
   }
 

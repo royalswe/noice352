@@ -3,6 +3,7 @@
   import {fade} from 'svelte/transition'
 
   export let image
+  export let className = undefined
   export let maxWidth = 1200
   export let alt = undefined
 
@@ -24,5 +25,6 @@
     src={urlFor(image).width(maxWidth).fit('fillmax')}
     alt={alt || image.alt || ''}
     style="aspect-ratio: {aspectRatio};"
+    class={className}
   />
 {/if}

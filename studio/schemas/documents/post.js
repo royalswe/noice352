@@ -66,7 +66,6 @@ export default {
     },
     {
       name: 'body',
-      type: 'bodyPortableText',
       type: 'array',
       title: 'Post body',
       of: [

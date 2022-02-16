@@ -33,13 +33,16 @@
   export let author
 </script>
 
-<h1>{author.name}</h1>
-
 {#if author.image}
-  <SanityImage image={author.image} maxWidth={700} />
+  <figure class="pb-10">
+    <SanityImage className="rounded-full mx-auto" image={author.image} maxWidth={250} />
+    <figcaption class="font-medium">
+      <div class="text-gray-900 text-center">Innlägg av {author.name}</div>
+    </figcaption>
+  </figure>
 {/if}
 
-{#if author?.bio}
+<!-- {#if author?.bio}
   <PortableText
     blocks={author.bio}
     serializers={{
@@ -53,8 +56,6 @@
       }
     }}
   />
-{/if}
-
-<h2>Posts by {author.name}</h2>
+{/if} -->
 
 <PostsGrid posts={author.posts} />

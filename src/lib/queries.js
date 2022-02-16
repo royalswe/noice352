@@ -11,11 +11,13 @@ export function getPostsQuery(extraFilter) {
   ] | order(publishedAt desc) {
     title,
     preamble,
-    slug,
+    "slug": slug.current,
     image,
     publishedAt,
-    "categories": *[ _type == "category" ]{ title },
-    "author": *[ _type == "author" ]{ ${AUTHOR_CARD_FRAGMENT} }
+    categories[]->{title, "slug":slug.current},
+    "authors": authors[].author->{
+			${AUTHOR_CARD_FRAGMENT}
+		}
   }`
 }
 

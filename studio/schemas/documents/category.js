@@ -13,6 +13,17 @@ export default {
       validation: (Rule) => Rule.required()
     },
     {
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      description: 'Address of this post in the website',
+      options: {
+        source: 'title',
+        maxLength: 96
+      },
+      validation: (Rule) => Rule.required()
+    },
+    {
       name: 'description',
       type: 'text',
       title: 'Description'
